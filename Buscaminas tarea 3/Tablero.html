@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head> <!-- Fernando David Pérez López - 1º SMR Distancia - Curso 2025/2026 -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juego - Poki Games</title> <!-- Título que aparece en la pestaña del navegador --> 
+        <link rel="stylesheet" href="css/styles.css"> <!-- Localización archivo CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Localización 
+bootstrap -->
+    </head>
+    <body> <!-- Encabezado de la página de "Tablero" -->
+        <header>
+            <div class="banner"></div> <!-- Contenedor banner -->
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" > <!-- Barra de navegación con bootstrap -->
+                <div class="container"> <!-- Contenedor Bootstrap que agrupa el logo, el botón hamburguesa y el menú -->
+                <a class="navbar-brand" href="index.html"><img src="img/logo_buscaminas.png" alt="Logo" class="logo-nav"></a> <!-- Logo, 
+                ubicación y tamaño -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" 
+                    aria-expanded="false" aria-label="Toggle navigation"> <!-- Boton tipo hamburguesa con bootstrap -->
+                <span class="navbar-toggler-icon"></span> <!-- icono boton tres rallitas con bootstrap -->
+                </button>
+
+
+                <div class="collapse navbar-collapse" id="menu"> <!-- Oculta la barra menu en pantallas pequeñas y aparece boton tres 
+                    rallitas con bootstrap -->
+                    <ul class="navbar-nav mx-auto"> <!-- Menu centrado con bootstrap -->
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li> <!-- Alineación y estilización menu con 
+                            bootstrap y la pagina del enlace -->
+                        <li class="nav-item"><a class="nav-link" href="tablero.html">Juego</a></li>
+                        <li class="nav-item"><a class="nav-link" href="salvar.html">Guardar puntuación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="puntuaciones.html">Puntuaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca</a></li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+        </header>
+        <main > <!-- Contenido principal de la página -->
+        
+            <div class="barra-superior-tablero"> <!-- Contenedor barra superior tablero -->
+            <div class="contador" id="contador-mina">10</div> <!-- Cuadro contador minas -->
+            <div class="emoji" id="emoji">🤔</div> <!-- Emoji pensante -->
+            <div class="contador" id="contador-tiempo">60</div> <!-- Cuadro cronometro -->
+            </div>
+
+            <div class="contenedor-tablero"> <!-- Contenedor tablero -->
+            <table class="tablero"> <!-- Tablero de una cuadrícula para el juego -->
+                <thead> <!-- Encabezados de las columnas -->
+                    <tr>
+                        <th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- Filas del tablero del 1 al 8 -->
+                    <tr>
+                        <th>1</th>
+                        <td class="celda descubierta num n3" data-fila="1" data-col="A"></td>
+                        <td class="celda mina" data-fila="1" data-col="B"></td>
+                        <td class="celda descubierta num n2" data-fila="1" data-col="C"></td>
+                        <td class="celda descubierta" data-fila="1" data-col="D"></td>
+                        <td class="celda descubierta" data-fila="1" data-col="E"></td>
+                        <td class="celda descubierta" data-fila="1" data-col="F"></td>
+                        <td class="celda descubierta" data-fila="1" data-col="G"></td>
+                        <td class="celda descubierta" data-fila="1" data-col="H"></td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td class="celda mina" data-fila="2" data-col="A"></td>
+                        <td class="celda mina" data-fila="2" data-col="B"></td>
+                        <td class="celda descubierta num n2" data-fila="2" data-col="C"></td>
+                        <td class="celda descubierta" data-fila="2" data-col="D"></td>
+                        <td class="celda descubierta" data-fila="2" data-col="E"></td>
+                        <td class="celda descubierta" data-fila="2" data-col="F"></td>
+                        <td class="celda descubierta" data-fila="2" data-col="G"></td>
+                        <td class="celda descubierta" data-fila="2" data-col="H"></td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td class="celda mina-explota" data-fila="3" data-col="A"></td>
+                        <td class="celda descubierta num n3" data-fila="3" data-col="B"></td>
+                        <td class="celda descubierta num n1" data-fila="3" data-col="C"></td>
+                        <td class="celda descubierta" data-fila="3" data-col="D"></td>
+                        <td class="celda descubierta num n1" data-fila="3" data-col="E"></td>
+                        <td class="celda descubierta num n1" data-fila="3" data-col="F"></td>
+                        <td class="celda descubierta num n1" data-fila="3" data-col="G"></td>
+                        <td class="celda descubierta" data-fila="3" data-col="H"></td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td class="celda bandera" data-fila="4" data-col="A"></td>
+                        <td class="celda descubierta num n1" data-fila="4" data-col="B"></td>
+                        <td class="celda descubierta" data-fila="4" data-col="C"></td>
+                        <td class="celda descubierta" data-fila="4" data-col="D"></td>
+                        <td class="celda descubierta num n1" data-fila="4" data-col="E"></td>
+                        <td class="celda mina" data-fila="4" data-col="F"></td>
+                        <td class="celda descubierta num n2" data-fila="4" data-col="G"></td>
+                        <td class="celda descubierta num n1" data-fila="4" data-col="H"></td>
+                    </tr>
+                    <tr>
+                        <th>5</th>
+                        <td class="celda oculta" data-fila="5" data-col="A"></td>
+                        <td class="celda descubierta num n1" data-fila="5" data-col="B"></td>
+                        <td class="celda descubierta num n1" data-fila="5" data-col="C"></td>
+                        <td class="celda descubierta" data-fila="5" data-col="D"></td>
+                        <td class="celda descubierta num n1" data-fila="5" data-col="E"></td>
+                        <td class="celda descubierta num n2" data-fila="5" data-col="F"></td>
+                        <td class="celda mina" data-fila="5" data-col="G"></td>
+                        <td class="celda oculta" data-fila="5" data-col="H"></td>
+                    </tr>
+                    <tr>
+                        <th>6</th>
+                        <td class="celda descubierta num n1" data-fila="6" data-col="A"></td>
+                        <td class="celda mina" data-fila="6" data-col="B"></td>
+                        <td class="celda descubierta num n2" data-fila="6" data-col="C"></td>
+                        <td class="celda descubierta num n1" data-fila="6" data-col="D"></td>
+                        <td class="celda descubierta num n1" data-fila="6" data-col="E"></td>
+                        <td class="celda oculta" data-fila="6" data-col="F"></td>
+                        <td class="celda oculta" data-fila="6" data-col="G"></td>
+                        <td class="celda descubierta num n2" data-fila="6" data-col="H"></td>
+                    </tr>
+                    <tr>
+                        <th>7</th>
+                        <td class="celda descubierta num n1" data-fila="7" data-col="A"></td>
+                        <td class="celda descubierta num n1" data-fila="7" data-col="B"></td>
+                        <td class="celda descubierta num n2" data-fila="7" data-col="C"></td>
+                        <td class="celda mina" data-fila="7" data-col="D"></td>
+                        <td class="celda oculta" data-fila="7" data-col="E"></td>
+                        <td class="celda descubierta num n1" data-fila="7" data-col="F"></td>
+                        <td class="celda oculta" data-fila="7" data-col="G"></td>
+                        <td class="celda mina" data-fila="7" data-col="H"></td>
+                    </tr>
+                    <tr>
+                        <th>8</th>
+                        <td class="celda descubierta" data-fila="8" data-col="A"></td>
+                        <td class="celda descubierta" data-fila="8" data-col="B"></td>
+                        <td class="celda descubierta num n1" data-fila="8" data-col="C"></td>
+                        <td class="celda oculta" data-fila="8" data-col="D"></td>
+                        <td class="celda descubierta num n1" data-fila="8" data-col="E"></td>
+                        <td class="celda oculta" data-fila="8" data-col="F"></td>
+                        <td class="celda mina" data-fila="8" data-col="G"></td>
+                        <td class="celda descubierta num n2" data-fila="8" data-col="H"></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </main>
+        <footer class="pie"> <!-- Pie de página -->
+            <p>Fernando David Pérez López</p>
+            <p>&COPY; 2025 IES Virgen del Carmen</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- bootstrap para el desplegable del menú -->
+    </body>
+</html>
