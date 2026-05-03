@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head> <!-- Fernando David Pérez López - 1º SMR Distancia - Curso 2025/2026 -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guardar puntuación - Poki Games</title> <!-- Título que aparece en la pestaña del navegador --> 
+        <link rel="stylesheet" href="css/styles.css"> <!-- Localización archivo CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Localización bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"> <!-- Localización bootstrap-icons -->
+    </head>
+    <body> 
+        <header> <!-- Encabezado de la página de "Salvar" -->
+            <div class="banner"></div> <!-- Contenedor banner -->
+
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark" > <!-- Barra de navegación con bootstrap -->
+                <div class="container"> <!-- Contenedor Bootstrap que agrupa el logo, el botón hamburguesa y el menú -->
+                <a class="navbar-brand" href="index.html"><img src="img/logo_buscaminas.png" alt="Logo" class="logo-nav"></a> <!-- Logo, ubicación y tamaño -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation"> <!-- Boton tipo hamburguesa con bootstrap -->
+                <span class="navbar-toggler-icon"></span> <!-- icono boton tres rallitas con bootstrap -->
+                </button>
+                <div class="collapse navbar-collapse" id="menu"> <!-- Oculta la barra menu en pantallas pequeñas y aparece boton tres rallitas con bootstrap -->
+                    <ul class="navbar-nav mx-auto"> <!-- Menu centrado con bootstrap -->
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li> <!-- Alineación y estilización menu con bootstrap y la pagina del enlace -->
+                        <li class="nav-item"><a class="nav-link" href="tablero.html">Juego</a></li>
+                        <li class="nav-item"><a class="nav-link" href="salvar.html">Guardar puntuación</a></li>
+                        <li class="nav-item"><a class="nav-link" href="puntuaciones.html">Puntuaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca</a></li>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+        </header>
+        <main> <!-- Contenido principal de la página -->
+            <h1>Formulario de registro</h1> <!-- Titulo principal -->
+            <div class="container mt-4"> <!-- Contenedor principal de Bootstrap (centra y da márgenes laterales) -->
+            <div class="row"> <!-- sistema grid bootstrap -->
+            <div class="col-12 col-md-8 col-lg-6 mx-auto"> <!-- Columna responsive:
+             - col-12: ocupa todo el ancho en móvil
+             - col-md-8: 8 columnas en tablet
+             - col-lg-6: 6 columnas en escritorio
+             - mx-auto: centra horizontalmente -->
+            <div class="card shadow"> <!-- Tarjeta Bootstrap con sombra -->
+            <div class="card-header bg-danger text-white text-center"> <!-- Cabecera del formulario centrado con bootstrap -->
+                <h2 class="mb-0">Registro de jugador</h2> <!-- Titulo formulario con margen bootstrap -->
+            </div>
+
+            <div class="card-body"> <!-- Cuerpo del formulario -->
+                <form id="formPuntuacion" action="#" method="post" novalidate><!-- Formulario:
+                action="#" → no envía a ningún sitio
+                method="post" → método de envío
+                novalidate → desactiva validación automática del navegador -->
+                
+                <div class="mb-3"> <!-- campo Nombre con margen inferior -->
+                    <label for="nombre" class="form-label">Nombre</label> <!-- Etiqueta nombre -->
+                    <div class="input-group"> <!-- Grupo de input con icono -->
+                        <span class="input-group-text"><i class="bi bi-person"></i></span> <!-- Icono dentro del input usando Bootstrap Icons -->
+                        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Introduce tu nombre" required> <!-- Campo de texto obligatorio -->
+                    </div>
+                </div>
+
+                <div class="mb-3"> <!-- Grupo del campo Correo -->
+                    <label for="correo" class="form-label">Correo electrónico</label> <!-- Etiqueta correo -->
+                    <div class="input-group"> <!-- Grupo de input con icono -->
+                        <span class="input-group-text"><i class="bi bi-envelope"></i></span> <!-- Icono dentro del input usando Bootstrap Icons -->
+                        <input type="email" id="correo" name="correo" class="form-control" placeholder="ejemplo@correo.com" required> <!-- Campo tipo email con validación y obligatorio-->
+                    </div>
+                </div>
+
+                <div class="mb-3"> <!-- Grupo del campo Puntuación -->
+                    <label for="puntos" class="form-label">Puntuación</label> <!-- Etiqueta puntos -->
+                    <div class="input-group"> <!-- Grupo de input con icono -->
+                        <span class="input-group-text"><i class="bi bi-trophy"></i></span> <!-- Icono dentro del input usando Bootstrap Icons -->
+                        <input type="number" id="puntos" name="puntos" class="form-control" placeholder="0" min="0" readonly> <!-- Campo numérico:
+                     min="0" → no permite números negativos y solo lectura -->
+                        <input type="hidden" id="dificultad" name="dificultad">
+                        <input type="hidden" id="tiempo" name="tiempo">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-danger w-100">Guardar</button> <!-- Botón guardar ocupando todo el ancho Bootstrap -->
+                </form>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+        </main>
+        <footer class="pie"> <!-- Pie de página -->
+            <p>Fernando David Pérez López</p>
+            <p>(C) 2025 IES Virgen del Carmen</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> <!-- bootstrap para el desplegable del menú -->
+        <script type="module" src="js/saveform.js"></script>
+
+    </body>
+</html>
